@@ -1,0 +1,188 @@
+/* Variables de colores */
+:root {
+  --red-color: hsl(0, 100%, 67%); /* Rojo */
+  --red-color-2: hsl(0, 100%, 67%, 0.2); /* Rojo */
+  --orange-color: hsl(39, 100%, 56%); /* Anaranjado */
+  --orange-color-2: hsl(39, 100%, 56%, 0.2); /* Anaranjado */
+  --green-color: hsl(166, 100%, 37%); /* Verde */
+  --green-color-2: hsl(166, 100%, 37%, 0.2);
+  --blue-color: hsl(234, 85%, 45%); /* Blue */
+  --blue-color-2: hsl(234, 85%, 45%, 0.2); /* Blue */
+  --white-color: hsl(0, 0%, 100%); /* blanco */
+  --fondo-color: hsl(221, 100%, 96%); /* fondo */
+  --text-color: hsl(241, 100%, 89%); /* texto */
+  --hover-color: hsl(224, 30%, 27%); /* Hover */
+  --gradient-bg-1: linear-gradient(
+    180deg,
+    hsl(252, 100%, 67%),
+    hsl(241, 81%, 54%)
+  );
+  --gradient-bg-2: linear-gradient(
+    180deg,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+}
+
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+  background-color: var(--fondo-color);
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh;
+}
+
+.tarjet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.tarjet .result {
+  background: var(--gradient-bg-1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.tarjet .result h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  padding-top: 40px;
+}
+
+.tarjet .result > p {
+  color: var(--text-color);
+  width: 50%;
+  margin: auto;
+  padding: 20px 0 10px 0;
+}
+
+.tarjet .result .sub-tittle {
+  color: var(--white-color);
+  padding: 0;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.tarjet .result .container-result {
+  border-radius: 100px;
+  background: var(--gradient-bg-2);
+  width: 200px;
+  height: 200px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: var(--white-color);
+}
+
+.tarjet .result .container-result span {
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.summary {
+  margin: 30px;
+}
+
+.summary h2 {
+  padding: 10px 0;
+}
+
+.summary .container-summary {
+  margin-top: 20px;
+}
+
+.summary .container-summary .content-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.summary .container-summary .content-summary .content-item {
+  display: flex;
+}
+
+.summary .container-summary .content-summary .content-item h3 {
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.summary .container-summary .content-summary .content-result p {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #000;
+}
+
+.summary .container-summary .content-summary .content-result p span {
+  font-weight: 700;
+}
+
+.orange {
+  background-color: var(--orange-color-2);
+  color: var(--orange-color);
+}
+
+.red {
+  background-color: var(--red-color-2);
+  color: var(--red-color);
+}
+
+.green {
+  background-color: var(--green-color-2);
+  color: var(--green-color);
+}
+
+.blue {
+  background-color: var(--blue-color-2);
+  color: var(--blue-color);
+}
+
+button {
+  background-color: hsl(224, 30%, 27%);
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 50px;
+  border-style: none;
+  font-size: 20px;
+  color: var(--white-color);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--blue-color);
+  transition: 0.5;
+}
+
+@media (width < 900px) {
+  .tarjet {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .tarjet .result {
+    border-radius: 0 0 30px 30px;
+  }
+}
